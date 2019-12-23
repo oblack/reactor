@@ -7,16 +7,17 @@ import reactor.test.StepVerifier;
 
 import java.time.Duration;
 
-//@SpringBootTest
+@SpringBootTest
 class ReactorApplicationTests {
 
-//	@Test
+	@Test
 	void contextLoads() {
 	}
 
-//	@Test
+	@Test
 	public void createAFlux_just() {
-		Flux<String> stringFlux = Flux.just("Apple", "Orange", "Grape", "Banana", "Strawberry").delayElements(Duration.ofSeconds(2)).log();
+		Flux<String> stringFlux = Flux.just("Apple", "Orange", "Grape", "Banana", "Strawberry");
+//		Flux<String> stringFlux = Flux.just("Apple", "Orange", "Grape", "Banana", "Strawberry").delayElements(Duration.ofSeconds(2)).log();
 //		stringFlux.subscribe(f -> System.out.println("Here is some " + f));
 
 		StepVerifier.create(stringFlux)

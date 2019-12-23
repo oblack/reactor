@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import java.time.Duration;
 
@@ -13,8 +14,25 @@ import java.time.Duration;
 @RequestMapping("/fruit")
 public class WebController {
 
+//    @GetMapping
+//    private Publisher<String> getAllFruit() {
+//        return Flux.just("Apple ", "Orange ", "Grape ", "Banana ", "Strawberry ").delayElements(Duration.ofSeconds(1));
+//    }
+
+//    @GetMapping
+//    private String getSingleResult() {
+//        Mono.just("Apple")
+//                .map(n -> n.toUpperCase())
+//                .subscribe(System.out::println);
+//        return "Opa";
+//    }
+
     @GetMapping
-    private Publisher<String> getAllEmployees() {
-        return Flux.just("Apple ", "Orange ", "Grape ", "Banana ", "Strawberry ").delayElements(Duration.ofSeconds(1));
+    private String getMultiResult() {
+        Flux.just("Apple ", "Orange ", "Grape ", "Banana ", "Strawberry ")
+                .map(n -> n.toUpperCase())
+                .subscribe(System.out::println);
+        return "Opa";
     }
+
 }
