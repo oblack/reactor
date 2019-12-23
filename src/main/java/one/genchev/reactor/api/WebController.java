@@ -10,11 +10,11 @@ import reactor.core.publisher.Flux;
 import java.time.Duration;
 
 @RestController
-@RequestMapping("/fruits")
+@RequestMapping("/fruit")
 public class WebController {
 
     @GetMapping
     private Publisher<String> getAllEmployees() {
-        return Flux.just("Apple ", "Orange ", "Grape ", "Banana ", "Strawberry ").delayElements(Duration.ofSeconds(2)).log();
+        return Flux.just("Apple ", "Orange ", "Grape ", "Banana ", "Strawberry ").delayElements(Duration.ofSeconds(1));
     }
 }
