@@ -12,4 +12,38 @@ public class ReactorApplication {
 
 }
 
+//@Component
+//@RequiredArgsConstructor
+//@Log4j2
+//class ReactiveMongo {
+//
+//	private final ReservationRepository reservationRepository;
+//
+//	@EventListener(ApplicationReadyEvent.class)
+//	public void init() {
+//		var reservationFlux = Flux.just("Apple ", "Orange ", "Grape ", "Banana ", "Strawberry ")
+//			.map(name -> new Reservation(null, name))
+//			.flatMap(this.reservationRepository::save);
+//
+//		reservationRepository.deleteAll()
+//				.thenMany(reservationFlux)
+//				.thenMany(this.reservationRepository.findAll())
+//				.subscribe(log::info);
+//	}
+//}
+//
+//interface ReservationRepository extends ReactiveCrudRepository<Reservation, String> {
+//
+//}
+//
+//
+//@Data
+//@Document
+//@AllArgsConstructor
+//@NoArgsConstructor
+//class Reservation {
+//	@Id
+//	private String id;
+//	private String name;
+//}
 
